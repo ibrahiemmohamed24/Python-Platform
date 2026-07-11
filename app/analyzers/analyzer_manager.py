@@ -1,5 +1,5 @@
 from app.analyzers.base_analyzer import BaseAnalyzer
-from app.contracts.analysis_result import AnalysisResult
+from app.domain.analysis_result import AnalysisResult
 
 
 class AnalyzerManager:

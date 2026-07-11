@@ -12,3 +12,7 @@ def test_analysis_service():
 
     assert result.analyzer == "Ruff"
     assert result.success is False
+    assert len(result.issues) == 2
+
+    assert result.issues[0].code == "F401"
+    assert result.issues[1].code == "F841"

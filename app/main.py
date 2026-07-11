@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from app.routers.analysis import router as analysis_router
 from app.routers.health import router as health_router
 
 app = FastAPI(
@@ -17,3 +18,4 @@ def root():
 
 
 app.include_router(health_router)
+app.include_router(analysis_router)

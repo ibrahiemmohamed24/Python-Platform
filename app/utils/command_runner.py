@@ -7,8 +7,13 @@ class CommandRunner:
         """
         Execute an external command and return the result.
         """
-        return subprocess.run(
-            command,
-            capture_output=True,
-            text=True,
-        )
+        try:
+            return subprocess.run(
+                command,
+                capture_output=True,
+                text=True,
+            )
+        except FileNotFoundError as exc:
+            raise RuntimeError(
+                f"Command not found: {command[0]}"
+            ) from exc

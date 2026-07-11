@@ -1,6 +1,6 @@
 from app.analyzers.analyzer_manager import AnalyzerManager
 from app.analyzers.ruff_analyzer import RuffAnalyzer
-from app.contracts.analysis_result import AnalysisResult
+from app.domain.analysis_result import AnalysisResult
 
 
 class AnalysisService:

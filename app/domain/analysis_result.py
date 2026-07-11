@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 
-from app.contracts.issue import Issue
+from app.domain.issue import Issue
 
 
 @dataclass
