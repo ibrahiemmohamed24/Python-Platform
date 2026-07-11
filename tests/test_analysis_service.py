@@ -6,13 +6,23 @@ def test_analysis_service():
 
     results = service.analyze("sample.py")
 
-    assert len(results) == 1
+    assert len(results) == 2
 
-    result = results[0]
+    ruff_result = next(
+        result for result in results
+        if result.analyzer == "Ruff"
+    )
 
-    assert result.analyzer == "Ruff"
-    assert result.success is False
-    assert len(result.issues) == 2
+    bandit_result = next(
+        result for result in results
+        if result.analyzer == "Bandit"
+    )
 
-    assert result.issues[0].code == "F401"
-    assert result.issues[1].code == "F841"
+    assert ruff_result.success is False
+    assert len(ruff_result.issues) == 2
+
+    assert ruff_result.issues[0].code == "F401"
+    assert ruff_result.issues[1].code == "F841"
+
+    assert bandit_result.success is True
+    assert bandit_result.issues == []
