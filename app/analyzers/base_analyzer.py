@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 
+from app.domain.analysis_result import AnalysisResult
+
 
 class BaseAnalyzer(ABC):
     """
@@ -7,7 +9,7 @@ class BaseAnalyzer(ABC):
     """
 
     @abstractmethod
-    def analyze(self, file_path: str) -> dict:
+    def analyze(self, file_path: str) -> AnalysisResult:
         """
         Analyze a Python file and return the analysis result.
         """

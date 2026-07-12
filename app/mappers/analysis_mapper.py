@@ -1,5 +1,5 @@
-from app.contracts.analysis_result import AnalysisResult
-from app.contracts.issue import Issue
+from app.domain.analysis_result import AnalysisResult
+from app.domain.issue import Issue
 from app.schemas.analysis_response import (
     AnalysisResponse,
     AnalyzerResponse,
