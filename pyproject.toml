@@ -6,8 +6,39 @@ build-backend = "setuptools.build_meta"
 name = "ai-python-qa-platform"
 version = "0.1.0"
 description = "AI-powered Python Quality Assurance Platform"
+readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "bandit>=1.8,<2",
+    "fastapi>=0.115,<1",
+    "mypy>=2.2,<3",
+    "pydantic>=2.10,<3",
+    "ruff>=0.15.21,<0.16",
+    "uvicorn>=0.34,<1",
+]
 
-[tool.setuptools]
-packages = ["app"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Framework :: FastAPI",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Repository = "https://github.com/ibrahiemmohamed24/Python-Platform"
+Issues = "https://github.com/ibrahiemmohamed24/Python-Platform/issues"
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.2,<2",
+    "pytest>=8,<10",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
