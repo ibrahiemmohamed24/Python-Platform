@@ -1,10 +1,15 @@
+from pathlib import Path
+
 from app.services.analysis_service import AnalysisService
+
+
+SAMPLE_FILE = Path(__file__).resolve().parents[1] / "sample.py"
 
 
 def test_analysis_service():
     service = AnalysisService()
 
-    results = service.analyze("sample.py")
+    results = service.analyze(str(SAMPLE_FILE))
 
     assert len(results) == 3
 
