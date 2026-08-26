@@ -13,6 +13,14 @@ dist/
 
 # Environment Variables
 .env
+.env.*
+!.env.example
+
+# Credentials and Certificates
+*.key
+*.pem
+*.p12
+*.pfx
 
 # IDE
 .vscode/
@@ -21,7 +29,11 @@ dist/
 # Testing
 .pytest_cache/
 .coverage
+coverage.xml
 htmlcov/
+.hypothesis/
+.tox/
+.nox/
 
 # Type Checking
 .mypy_cache/
