@@ -53,6 +53,16 @@ git checkout -b feature/task-XXX-short-description
 
 Good examples:
 
+Add JSON output support to Bandit analyzer (TASK-042)
+Fix crash when input file is empty (TASK-055)
+
+Bad examples:
+
+update stuff
+fix
+work in progress
+
+
 ### 4. Push and open a Pull Request / ارفع وافتح PR
 ```bash
 git push origin feature/task-XXX-short-description
@@ -105,7 +115,7 @@ pytest                # tests
 
 - Push directly to `main` (blocked anyway)
 - Force push to shared branches
-- Delete other people''s branches
+- Delete other people's branches
 - Commit secrets, API keys, or `.env` files
 - Merge your own PR without review
 
